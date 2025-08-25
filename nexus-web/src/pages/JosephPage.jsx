@@ -40,8 +40,22 @@ export default function JosephPage() {
               {data.hero.cta}
             </button>
           </div>
-          <div className="w-full md:w-[460px] h-[260px] rounded-2xl bg-[#0B1220] border border-[#1F2937] flex items-center justify-center text-[#9CA3AF]">
-            Console Preview
+          {/* Media with left fade */}
+          <div className="relative w-full md:w-[460px] h-[260px] rounded-2xl border border-[#1F2937] overflow-hidden bg-[#0B1220]">
+            {data.hero.videoUrl ? (
+              <video
+                src={data.hero.videoUrl}
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <div className="h-full w-full flex items-center justify-center text-[#9CA3AF]">Media Preview</div>
+            )}
+            {/* left fade mask */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1220] via-[#0B1220]/30 to-transparent" />
           </div>
         </div>
       </Container>

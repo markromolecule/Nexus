@@ -5,6 +5,9 @@ export const josephData = {
     title: 'Nexus Arena',
     subtitle: 'Next‑gen competitive hub',
     cta: 'Enter Lobby',
+    // Optional: provide a video or gif URL to showcase in the hero media panel
+    videoUrl: '',
+    videoType: 'video/mp4',
   },
   
   character: {
