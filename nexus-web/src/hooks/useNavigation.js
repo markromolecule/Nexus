@@ -15,5 +15,5 @@ export function useNavigation(initial = 'Joseph') {
   }
 }
 
-export const DEVELOPERS = ['Joseph', 'dev2', 'dev3', 'dev4', 'dev5']
+export const DEVELOPERS = ['Joseph', 'Jom', 'dev3', 'dev4', 'dev5']
 
