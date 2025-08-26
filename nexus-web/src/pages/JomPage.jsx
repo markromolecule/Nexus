@@ -1,12 +1,9 @@
-import CharacterCard from "../components/joseph/CharacterCard";
-import StatsCard from "../components/joseph/StatsCard";
 import GameCard from "../components/joseph/GameCard";
-import FeaturedTournamentCard from "../components/joseph/FeaturedTournamentCard";
 import ActivityItem from "../components/joseph/ActivityItem";
 import AchievementBadge from "../components/joseph/AchievementBadge";
 import NewsCard from "../components/joseph/NewsCard";
 import Container from "../shared/Container";
-import { jomData as data } from "../common/data";
+import { jomData as data } from "../common/jomData";
 import { useSound } from '../hooks/useSound'
 
 export default function JomPage() {

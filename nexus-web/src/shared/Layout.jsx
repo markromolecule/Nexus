@@ -24,7 +24,9 @@ export default function Layout({ children }) {
         <div className="noise-layer" />
         <div className="sweep" />
       </div>
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import ActivityItem from "../components/joseph/ActivityItem";
 import AchievementBadge from "../components/joseph/AchievementBadge";
 import NewsCard from "../components/joseph/NewsCard";
 import Container from "../shared/Container";
-import { josephData as data } from "../common/data";
+import { josephData as data } from "../common/josephData";
 import { useSound } from '../hooks/useSound'
 
 export default function JosephPage() {
@@ -40,6 +40,7 @@ export default function JosephPage() {
               {data.hero.cta}
             </button>
           </div>
+          
           {/* Media with left fade */}
           <div className="relative w-full md:w-[460px] h-[260px] rounded-2xl border border-[#1F2937] overflow-hidden bg-[#0B1220]">
             {data.hero.videoUrl ? (
@@ -108,11 +109,13 @@ export default function JosephPage() {
       </div>
 
       {/* Featured Tournament */}
-      <FeaturedTournamentCard
-        title="Nexus Masters: Neon Cup"
-        prizePool="$25,000"
-        startsAt="in 3 days"
-      />
+      {data.tournament && (
+        <FeaturedTournamentCard
+          title={data.tournament.title}
+          prizePool={data.tournament.prizePool}
+          startsAt={data.tournament.startsAt}
+        />
+      )}
 
       {/* Games */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
