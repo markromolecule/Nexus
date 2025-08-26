@@ -1,29 +1,41 @@
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import josephAvatar from '../assets/img/avatar/profile.JPG'
-import warzoneImg from '../assets/img/games/Warzone.png'
-import forzaImg from '../assets/img/games/forza.jpg'
-import gtaImg from '../assets/img/games/Grand_Theft_Auto_V.png'
+import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
+// Fighting Games - Using actual game images
+import streetFighterImg from '../assets/img/games/streetfighet.jpg' // Street Fighter 6
+import tekkenImg from '../assets/img/games/tekken.jpg' // Tekken 8
+import mortalKombatImg from '../assets/img/games/mortalkombat.jpg' // Mortal Kombat 1
 
 export const kyrosData = {
   hero: {
-    badge: 'Kyros • White Neon Theme',
-    title: 'Elevate Your Play',
+    badge: 'Kyros • Fighting Game Master',
+    title: 'Neon Combat Elite',
     subtitle:
-      'A clean, modern, and futuristic dashboard for Kyros. Track your performance, discover new titles, and flex your achievements — all in a crisp white theme.',
-    primaryCta: 'Enter Dashboard',
-    secondaryCta: 'Browse Games',
+      'Master of the fighting game arena with purple neon style. Dominate tournaments with precision combos and tactical mind games in the ultimate combat experience.',
+    primaryCta: 'Enter Arena',
+    secondaryCta: 'View Stats',
+  },
+
+  character: {
+    name: 'Kyros Quirimit',
+    ign: 'kyrosimp',
+    team: 'Neon Fighters',
+    role: 'Professional Fighting Game Player',
+    avatar: kyrosAvatar,
+    bio: 'Elite fighting game competitor specializing in technical combos and frame data mastery. Member of Neon Fighters team with expertise in Street Fighter, Tekken, and tournament-level play.',
+    top: true,
   },
   
   stats: [
-    { label: 'Win Rate', value: '68%' },
-    { label: 'Avg. K/D', value: '2.1' },
-    { label: 'Matches', value: '1,274' },
+    { label: 'Tournament Wins', value: '47' },
+    { label: 'Combo Accuracy', value: '94%' },
+    { label: 'Ranked Matches', value: '3,284' },
   ],
 
   featuredGames: [
-    { id: 1, title: 'Warzone', tag: 'Top', image: warzoneImg },
-    { id: 2, title: 'Forza Horizon', tag: 'Top', image: forzaImg },
-    { id: 3, title: 'GTA V', tag: 'Top', image: gtaImg },
+    { id: 1, title: 'Street Fighter 6', tag: 'Fighting', image: streetFighterImg },
+    { id: 2, title: 'Tekken 8', tag: 'Fighting', image: tekkenImg },
+    { id: 3, title: 'Mortal Kombat 1', tag: 'Fighting', image: mortalKombatImg },
   ],
 
   achievements: [

@@ -16,7 +16,7 @@ export default function Navigation({ active, onSelect }) {
             }`}
             aria-current={isActive ? 'page' : undefined}
           >
-            {`Developer ${idx + 1}`}
+            {key}
           </button>
         )
       })}

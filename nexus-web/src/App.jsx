@@ -4,8 +4,8 @@ import TopBar from './components/common/TopBar'
 import JosephPage from './pages/JosephPage'
 import JomPage from './pages/JomPage'
 import KyrosPage from './pages/KyrosPage'
-import Developer4Page from './pages/Developer4Page'
-import Developer5Page from './pages/Developer5Page'
+import EuriPage from './pages/EuriPage'
+import BjPage from './pages/BjPage'
 import Footer from './components/common/Footer'
 import { useNavigation } from './hooks/useNavigation'
 
@@ -20,8 +20,8 @@ function App() {
           {active === 'Joseph' && <JosephPage />}
           {active === 'Jom' && <JomPage />}
           {active === 'Kyros' && <KyrosPage />}
-          {active === 'dev4' && <Developer4Page />}
-          {active === 'dev5' && <Developer5Page />}
+                  {active === 'Euri' && <EuriPage />}
+        {active === 'Bj' && <BjPage />}
         </div>
         <Footer theme={active === 'Kyros' ? 'light' : 'dark'} />
       </div>

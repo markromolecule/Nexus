@@ -19,7 +19,7 @@ export default function Header({ active, onSelect, scrolled = false, theme = 'da
           >
             {DEVELOPERS.map((key, idx) => (
               <option key={key} value={key}>
-                {key === 'Joseph' ? 'Joseph' : key === 'Jom' ? 'Jom' : `Developer ${idx + 1}`}
+                {key}
               </option>
             ))}
           </select>

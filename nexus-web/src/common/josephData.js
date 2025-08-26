@@ -1,4 +1,5 @@
 import profileAvatar from '../assets/img/avatar/profile.JPG'
+import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import codImg from '../assets/img/games/cod.jpg'
 import gtaImg from '../assets/img/games/Grand_Theft_Auto_V.png'
 import warzoneImg from '../assets/img/games/Warzone.png'
@@ -59,6 +60,13 @@ export const josephData = {
     { label: 'MVPs', value: 132, max: 200 },
     { label: 'Avg Damage', value: 820, max: 1000 },
     { label: 'Objectives Secured', value: 74, max: 100, unit: '%' },
+  ],
+
+  friends: [
+    { id: 1, name: 'Jom', status: 'Online', avatar: jommAvatar },
+    { id: 2, name: 'Kyros', status: 'Online', avatar: '' },
+    { id: 3, name: 'Euri', status: 'In Match', avatar: '' },
+    { id: 4, name: 'Bj', status: 'Away', avatar: '' },
   ],
 
   games: [

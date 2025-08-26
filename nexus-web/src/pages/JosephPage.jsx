@@ -5,6 +5,7 @@ import FeaturedTournamentCard from "../components/joseph/FeaturedTournamentCard"
 import ActivityItem from "../components/joseph/ActivityItem";
 import AchievementBadge from "../components/joseph/AchievementBadge";
 import NewsCard from "../components/joseph/NewsCard";
+import FriendsCard from "../components/joseph/FriendsCard";
 import Container from "../shared/Container";
 import { josephData as data } from "../common/josephData";
 import { useSound } from '../hooks/useSound'
@@ -139,6 +140,9 @@ export default function JosephPage() {
         )}
       </div>
       
+      {/* Friends */}
+      <FriendsCard friends={data.friends} />
+
       {/* Activity + Achievements + News */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <Container className="p-5">

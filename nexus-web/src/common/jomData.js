@@ -9,6 +9,7 @@ import lostLegacyImg from '../assets/img/games/lost.jpg'
 
 // Avatar
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
+import josephAvatar from '../assets/img/avatar/profile.JPG'
 
 export const jomData = {
   hero: {
@@ -22,10 +23,12 @@ export const jomData = {
   },
   
   character: {
-    name: 'Sgt. Jom',
-    role: 'Streamer & Esports Player',
+    name: 'Jerome Benitez',
+    ign: 'sgt.jom',
+    team: 'ctOS',
+    role: 'Professional Esports Player',
     avatar: jommAvatar,
-    bio: 'Grinding ranked matches, breaking speedrun records, and streaming the chaos. Always hunting for that perfect play.',
+    bio: 'Elite gaming operative specializing in competitive FPS and action games. Member of ctOS esports team with a focus on tactical gameplay and precision execution.',
     top: true,
   },
 
@@ -65,7 +68,7 @@ export const jomData = {
 
   stats: [
     { label: 'Games Owned', value: 24 },
-    { label: 'Hours Played', value: 1847 },
+    { label: 'Tournaments Won', value: 23 },
     { label: 'Achievements', value: 156 },
   ],
 
@@ -77,6 +80,13 @@ export const jomData = {
     { label: 'Trophy Collection', value: 89, max: 100, unit: '%' },
     { label: 'Skill Rating', value: 96, max: 100 },
     { label: 'Team Play Score', value: 92, max: 100, unit: '%' },
+  ],
+
+  friends: [
+    { id: 1, name: 'Joseph', status: 'Online', avatar: josephAvatar },
+    { id: 2, name: 'Kyros', status: 'In Match', avatar: '' },
+    { id: 3, name: 'Euri', status: 'Online', avatar: '' },
+    { id: 4, name: 'Bj', status: 'Away', avatar: '' },
   ],
 
   games: [
