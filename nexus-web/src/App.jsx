@@ -15,7 +15,7 @@ function App() {
   return (
     <Layout>
       <div className="min-h-screen flex flex-col overflow-x-hidden">
-        <TopBar active={active} onSelect={navigate} />
+        <TopBar active={active} onSelect={navigate} theme={active === 'Kyros' ? 'light' : 'dark'} />
         <div className="flex-1">
           {active === 'Joseph' && <JosephPage />}
           {active === 'Jom' && <JomPage />}
@@ -23,7 +23,7 @@ function App() {
           {active === 'dev4' && <Developer4Page />}
           {active === 'dev5' && <Developer5Page />}
         </div>
-        <Footer />
+        <Footer theme={active === 'Kyros' ? 'light' : 'dark'} />
       </div>
     </Layout>
   )
