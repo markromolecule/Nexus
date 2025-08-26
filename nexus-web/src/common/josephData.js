@@ -1,4 +1,7 @@
 import profileAvatar from '../assets/img/avatar/profile.JPG'
+import codImg from '../assets/img/games/cod.jpg'
+import gtaImg from '../assets/img/games/Grand_Theft_Auto_V.png'
+import warzoneImg from '../assets/img/games/Warzone.png'
 
 export const josephData = {
   hero: {
@@ -6,8 +9,8 @@ export const josephData = {
     subtitle: 'Next‑gen competitive hub',
     cta: 'Enter Lobby',
     // Optional: provide a video or gif URL to showcase in the hero media panel
-    videoUrl: '',
-    videoType: 'video/mp4',
+    videoUrl: '/image/hero.gif', // e.g. '/image/hero.gif' or '/video/hero.mp4'
+    videoType: 'image/gif', // or 'video/mp4'
   },
   
   character: {
@@ -59,9 +62,9 @@ export const josephData = {
   ],
 
   games: [
-    { id: 1, title: 'Mobile Legends: Bang Bang', genre: 'MOBA', top: true },
-    { id: 2, title: 'Call of Duty: Mobile', genre: 'FPS & Battle Royale' },
-    { id: 3, title: 'Quantum Siege', genre: 'Strategy' },
+    { id: 1, title: 'Call of Duty: Warzone', genre: 'Battle Royale', top: true, image: warzoneImg },
+    { id: 2, title: 'Call of Duty: Black Ops 3', genre: 'FPS Multiplayer', image: codImg },
+    { id: 3, title: 'Grand Theft Auto V', genre: 'Open World Crime', image: gtaImg },
   ],
 }
 
