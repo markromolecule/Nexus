@@ -24,7 +24,7 @@ export default function JosephPage() {
     <div className="pt-24 px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       {/* Hero */}
       <Container className="p-10 md:p-12 bg-gradient-to-r from-[#0D0D0D] via-[#2563EB]/10 to-[#06B6D4]/10 min-h-[60vh] md:min-h-[65vh] flex items-center">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-start md:items-center gap-8 w-full">
           <div className="flex-1">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide">
               {data.hero.title}
@@ -42,21 +42,31 @@ export default function JosephPage() {
           </div>
           
           {/* Media with left fade */}
-          <div className="relative w-full md:w-[460px] h-[260px] rounded-2xl border border-[#1F2937] overflow-hidden bg-[#0B1220]">
-            {data.hero.videoUrl ? (
-              <video
-                src={data.hero.videoUrl}
-                className="h-full w-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            ) : (
-              <div className="h-full w-full flex items-center justify-center text-[#9CA3AF]">Media Preview</div>
-            )}
-            {/* left fade mask */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1220] via-[#0B1220]/30 to-transparent" />
+          <div className="relative w-full md:col-start-2 md:col-end-3 md:justify-self-end h-[260px] md:h-[55vh] md:w-[48vw] lg:w-[50vw] xl:w-[55vw] 2xl:w-[58vw] md:mr-0 md:pr-3 lg:pr-4 xl:pr-5 2xl:pr-6 md:pb-6">
+            <div className="relative h-full w-full rounded-2xl overflow-hidden border border-[#1F2937] bg-[#0B1220]">
+              {data.hero.videoUrl ? (
+                (data.hero.videoType?.includes('gif') || /\.gif($|\?)/i.test(data.hero.videoUrl)) ? (
+                  <img
+                    src={data.hero.videoUrl}
+                    alt="Hero media"
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={data.hero.videoUrl}
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                )
+              ) : (
+                <div className="h-full w-full flex items-center justify-center text-[#9CA3AF]">Media Preview</div>
+              )}
+              {/* left fade mask */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B1220] via-[#0B1220]/30 to-transparent" />
+            </div>
           </div>
         </div>
       </Container>
@@ -120,7 +130,7 @@ export default function JosephPage() {
       {/* Games */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {(data.games?.length ? data.games : []).map((g) => (
-          <GameCard key={g.id} title={g.title} genre={g.genre} top={!!g.top} />
+          <GameCard key={g.id} title={g.title} genre={g.genre} top={!!g.top} image={g.image} />
         ))}
         {!data.games?.length && (
           <div className="p-6 rounded-xl border border-[#1F2937] text-[#E5E7EB]">
