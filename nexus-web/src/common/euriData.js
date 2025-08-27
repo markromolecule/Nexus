@@ -1,6 +1,8 @@
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import josephAvatar from '../assets/img/avatar/profile.JPG'
 import euriAvatar from '../assets/img/avatar/euri.jpg'
+import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
+import bjAvatar from '../assets/img/avatar/bj.jpg'
 // Nintendo Switch Games - Using actual game images
 import marioKartImg from '../assets/img/games/mario.jpg' // Mario Kart 8 Deluxe
 import zelda from '../assets/img/games/zelda.jpg' // The Legend of Zelda
@@ -46,10 +48,10 @@ export const euriData = {
   ],
 
   friends: [
-    { id: 1, name: 'Kyros', status: 'Online', avatar: '' },
+    { id: 1, name: 'Kyros', status: 'Online', avatar: kyrosAvatar },
     { id: 2, name: 'Jom', status: 'In Match', avatar: jommAvatar },
     { id: 3, name: 'Joseph', status: 'Online', avatar: josephAvatar },
-    { id: 4, name: 'BJ', status: 'Away', avatar: '' },
+    { id: 4, name: 'BJ', status: 'Away', avatar: bjAvatar },
   ],
   clips: [
     { id: 1, title: 'Lightning reflexes', duration: '0:23' },

@@ -1,11 +1,15 @@
-import GameCard from "../components/joseph/GameCard";
-import ActivityItem from "../components/joseph/ActivityItem";
-import AchievementBadge from "../components/joseph/AchievementBadge";
-import NewsCard from "../components/joseph/NewsCard";
-import FriendsCard from "../components/joseph/FriendsCard";
+import GameCard from "../components/jom/GameCard";
+import ActivityItem from "../components/jom/ActivityItem";
+import AchievementBadge from "../components/jom/AchievementBadge";
+import NewsCard from "../components/jom/NewsCard";
+import FriendsCard from "../components/jom/FriendsCard";
+import CharacterCard from "../components/jom/CharacterCard";
+import SectionHeader from "../components/jom/SectionHeader";
+import Hero from "../components/jom/Hero";
 import Container from "../shared/Container";
 import { jomData as data } from "../common/jomData";
 import { useSound } from '../hooks/useSound'
+import '../components/jom/JomComponents.css'
 
 export default function JomPage() {
   const { click, select } = useSound()
@@ -19,172 +23,50 @@ export default function JomPage() {
   };
 
   return (
-    <div className="pt-24 px-4 sm:px-6 lg:px-8 py-8 space-y-8 min-h-screen bg-gradient-to-br from-slate-950 via-gray-950 to-slate-900">
-      {/* Futuristic Grid Background */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}></div>
+    <div className="pt-24 px-4 sm:px-6 lg:px-8 py-8 space-y-8 min-h-screen bg-gradient-to-br from-black via-slate-900 to-black">
+      {/* PS5 Particle Background */}
+      <div className="fixed inset-0 opacity-30 pointer-events-none">
+        <div className="absolute inset-0 ps5-particle-bg"></div>
       </div>
       
-      {/* Animated Orbs */}
+      {/* PS5 Ambient Light Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-3/4 left-3/4 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse ps5-ambient-light-1"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse ps5-ambient-light-2"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-orange-500/8 rounded-full blur-3xl animate-pulse ps5-ambient-light-3"></div>
+      </div>
+      
+      {/* PS5 Edge Lighting */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-px ps5-edge-lighting-top"></div>
+        <div className="absolute bottom-0 right-0 w-full h-px ps5-edge-lighting-bottom"></div>
+        <div className="absolute left-0 top-0 w-px h-full ps5-edge-lighting-left"></div>
+        <div className="absolute right-0 top-0 w-px h-full ps5-edge-lighting-right"></div>
       </div>
       {/* Hero - Futuristic Game Selection */}
-      <div className="relative min-h-[60vh] md:min-h-[70vh] flex flex-col justify-between overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 backdrop-blur-sm border border-gray-800/50">
-        {/* Background - Selected Game (Lost Legacy) */}
-        <div className="absolute inset-0">
-          <img 
-            src={data.hero.backgroundImage} 
-            alt="Uncharted: The Lost Legacy Background"
-            className="h-full w-full object-cover object-center opacity-60"
-          />
-          {/* Futuristic Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/60 via-transparent to-slate-950/80" />
-          {/* Scan lines effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent animate-pulse" />
+      <Hero 
+        hero={{
+          backgroundImage: data.hero.backgroundImage,
+          title: "Uncharted: The Lost Legacy",
+          description: "Embark on an action-packed adventure through ancient ruins and dangerous landscapes as Chloe Frazer and Nadine Ross search for the legendary Tusk of Ganesh."
+        }}
+        games={data.games}
+      />
+
+        {/* Character Profile - PS5 Style Card */}
+        <div id="character">
+          <CharacterCard character={data.character} />
         </div>
-
-        {/* Game Information - Left Side */}
-        <div className="relative z-10 pt-8 px-6 lg:px-8">
-          <div className="max-w-md">
-            <h1 className="text-2xl md:text-4xl font-bold tracking-wide text-white drop-shadow-2xl mb-4">
-              Uncharted: The Lost Legacy
-            </h1>
-            <p className="text-gray-300 text-sm md:text-base drop-shadow-lg leading-relaxed mb-6">
-              Embark on an action-packed adventure through ancient ruins and dangerous landscapes as Chloe Frazer and Nadine Ross search for the legendary Tusk of Ganesh.
-            </p>
-            <button className="text-cyan-400 hover:text-cyan-300 text-lg transition-colors duration-300 relative group">
-              <span className="relative z-10">Play Now</span>
-              <div className="absolute inset-0 bg-cyan-400/10 rounded border border-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </div>
-        </div>
-
-        {/* Game Row - Bottom Section (Futuristic Style) */}
-        <div className="relative z-10 pb-6 px-6 lg:px-8">
-          <div className="flex justify-center">
-            <div className="flex space-x-3 overflow-x-auto scrollbar-hide">
-              {/* Lost Legacy - Selected/Active */}
-              <div className="flex-shrink-0 relative">
-                <div className="w-36 h-20 md:w-44 md:h-24 rounded-lg overflow-hidden border border-cyan-400/60 shadow-[0_0_20px_rgba(6,182,212,0.3)] bg-slate-900/80 backdrop-blur-sm">
-                  <img 
-                    src={data.hero.backgroundImage}
-                    alt="Uncharted: The Lost Legacy"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-600/20 to-transparent" />
-                  <div className="absolute top-1 right-1 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-
-              {/* Other Games */}
-              {data.games?.slice(0, 5).map((game, index) => (
-                <div key={game.id} className="flex-shrink-0 relative group cursor-pointer">
-                  <div className="w-36 h-20 md:w-44 md:h-24 rounded-lg overflow-hidden border border-gray-700/60 group-hover:border-gray-500/80 transition-all duration-300 bg-slate-900/60 backdrop-blur-sm">
-                    <img 
-                      src={game.image}
-                      alt={game.title}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors duration-300" />
-                  </div>
-                </div>
-              ))}
-
-              {/* More Games Indicator */}
-              <div className="flex-shrink-0 relative group cursor-pointer">
-                <div className="w-36 h-20 md:w-44 md:h-24 rounded-lg border border-dashed border-gray-600/60 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center group-hover:border-gray-500/80 group-hover:bg-slate-900/60 transition-all duration-300">
-                  <div className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-center">
-                    <div className="w-8 h-8 mx-auto mb-1 border border-gray-600 rounded flex items-center justify-center">
-                      <span className="text-xs">+</span>
-                    </div>
-                    <div className="text-xs font-mono">MORE</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Character Profile - Futuristic Card */}
-      <Container className="p-0 overflow-hidden bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 border border-gray-800/60 backdrop-blur-sm" id="character">
-        <div className="relative">
-          {/* Futuristic Background Pattern */}
-          <div className="absolute inset-0 opacity-15">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent"></div>
-            <div className="absolute inset-0" style={{
-              backgroundImage: `
-                linear-gradient(rgba(6,182,212,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(6,182,212,0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '60px 60px'
-            }}></div>
-          </div>
-          
-          <div className="relative p-8">
-            <div className="flex items-start gap-6">
-              {/* Avatar */}
-              <div className="relative group" onMouseEnter={select} onClick={click}>
-                <div className="w-32 h-32 rounded-lg overflow-hidden ring-2 ring-cyan-400/60 shadow-[0_0_25px_rgba(6,182,212,0.3)] bg-slate-900/80">
-                  <img 
-                    src={data.character.avatar} 
-                    alt={data.character.name}
-                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                {data.character.top && (
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-cyan-400 rounded flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.5)]">
-                    <div className="w-2 h-2 bg-slate-900 rounded-full animate-pulse"></div>
-                  </div>
-                )}
-              </div>
-
-              {/* Character Info */}
-              <div className="flex-1">
-                <h1 className="text-3xl font-bold text-white mb-1">{data.character.name}</h1>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-blue-400 text-lg font-bold">@{data.character.ign}</span>
-                  <span className="text-gray-400">•</span>
-                  <span className="text-gray-300 text-sm font-medium">{data.character.team}</span>
-                </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="px-4 py-2 rounded bg-cyan-400/10 text-cyan-400 text-sm font-mono font-medium border border-cyan-400/30 backdrop-blur-sm tracking-wider">
-                    {data.character.role}
-                  </span>
-                  <span className="px-3 py-1 rounded bg-slate-800/60 text-gray-300 text-xs font-mono font-bold border border-gray-600/50 backdrop-blur-sm tracking-wider">
-                    VERIFIED
-                  </span>
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed max-w-lg">
-                  {data.character.bio}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
 
       {/* Gaming Stats - Modern Dashboard */}
       <div className="space-y-6">
-        {/* Quick Stats Overview - PS5 Style */}
-        <Container className="p-8 bg-gradient-to-br from-black via-gray-900 to-gray-800 border border-gray-700">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-            <h2 className="text-2xl font-bold text-white">Gaming Overview</h2>
-            <div className="ml-auto px-3 py-1 rounded-full bg-blue-600/20 text-blue-400 text-sm font-medium border border-blue-500/30 backdrop-blur-sm">
-              Live Stats
-            </div>
-          </div>
+                      {/* Quick Stats Overview - PS5 Style */}
+              <Container className="p-8 bg-gradient-to-br from-black via-slate-900 to-black border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+          <SectionHeader 
+            title="Gaming Overview" 
+            badge="Live Stats" 
+            accentColor="blue" 
+          />
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {(data.stats?.length ? data.stats : [{ label: "No Data", value: "--" }]).map((s, i) => (
@@ -204,15 +86,13 @@ export default function JomPage() {
 
         {/* Milestones & Achievements Side by Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Milestones */}
-          <Container className="p-8 bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 border border-gray-800/60 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-2 h-8 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
-              <h2 className="text-2xl font-bold text-white">Milestones</h2>
-              <div className="ml-auto px-3 py-1 rounded bg-cyan-400/10 text-cyan-400 text-sm font-mono border border-cyan-400/30">
-                Progress
-              </div>
-            </div>
+                            {/* Milestones */}
+                  <Container className="p-8 bg-gradient-to-br from-black via-slate-900/90 to-black border border-white/20 backdrop-blur-sm shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+            <SectionHeader 
+              title="Milestones" 
+              badge="Progress" 
+              accentColor="cyan" 
+            />
 
             <div className="space-y-4">
               {(data.statDetails || []).map((d, i) => {
@@ -240,15 +120,13 @@ export default function JomPage() {
             </div>
           </Container>
 
-          {/* Achievements */}
-          <Container className="p-8 bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 border border-gray-800/60 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-2 h-8 bg-gradient-to-b from-yellow-400 to-orange-500 rounded-full shadow-[0_0_10px_rgba(251,191,36,0.5)]"></div>
-              <h2 className="text-2xl font-bold text-white">Achievements</h2>
-              <div className="ml-auto px-3 py-1 rounded bg-yellow-400/10 text-yellow-400 text-sm font-mono border border-yellow-400/30">
-                {data.achievements?.length || 0}
-              </div>
-            </div>
+                            {/* Achievements */}
+                  <Container className="p-8 bg-gradient-to-br from-black via-slate-900/90 to-black border border-white/20 backdrop-blur-sm shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+            <SectionHeader 
+              title="Achievements" 
+              badge={data.achievements?.length || 0} 
+              accentColor="yellow" 
+            />
             
             <div className="grid grid-cols-2 gap-3">
               {(data.achievements || []).map((achievement, idx) => (
@@ -281,15 +159,13 @@ export default function JomPage() {
       
       {/* Activity + Achievements + News - Modern Layout */}
       <div className="space-y-8">
-        {/* Recent Activity - Full Width Modern Card */}
-        <Container className="p-8 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A]">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-gradient-to-b from-[#06B6D4] to-[#2563EB] rounded-full"></div>
-            <h2 className="text-2xl font-bold text-white">Recent Activity</h2>
-            <div className="ml-auto px-3 py-1 rounded-full bg-[#06B6D4]/20 text-[#06B6D4] text-sm font-medium">
-              Live Feed
-            </div>
-          </div>
+                        {/* Recent Activity - PS5 Style Card */}
+                <Container className="p-8 bg-gradient-to-br from-black via-slate-900/90 to-black border border-white/20 backdrop-blur-sm shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+          <SectionHeader 
+            title="Recent Activity" 
+            badge="Live Feed" 
+            accentColor="cyan" 
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {(data.activity || []).map((item, idx) => (
               <div key={idx} className="group p-4 rounded-xl bg-[#1E293B]/60 border border-[#334155]/40 hover:border-[#06B6D4]/50 hover:bg-[#1E293B]/80 transition-all duration-300">
@@ -299,15 +175,13 @@ export default function JomPage() {
           </div>
         </Container>
 
-              {/* Friends Section - New Layout */}
-      <Container className="p-8 bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 border border-gray-800/60 backdrop-blur-sm">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-2 h-8 bg-gradient-to-b from-green-400 to-emerald-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-          <h2 className="text-2xl font-bold text-white">Friends</h2>
-          <div className="ml-auto px-3 py-1 rounded bg-green-400/10 text-green-400 text-sm font-mono border border-green-400/30">
-            {data.friends?.filter(f => f.status.toLowerCase() === 'online').length || 0} Online
-          </div>
-        </div>
+                              {/* Friends Section - PS5 Style */}
+                <Container className="p-8 bg-gradient-to-br from-black via-slate-900/90 to-black border border-white/20 backdrop-blur-sm shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+        <SectionHeader 
+          title="Friends" 
+          badge={`${data.friends?.filter(f => f.status.toLowerCase() === 'online').length || 0} Online`} 
+          accentColor="green" 
+        />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {(data.friends || []).map((friend) => (
@@ -341,15 +215,13 @@ export default function JomPage() {
         </div>
       </Container>
 
-      {/* News Section */}
-      <Container className="p-8 bg-gradient-to-br from-slate-950/90 via-gray-950/90 to-slate-900/90 border border-gray-800/60 backdrop-blur-sm">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-2 h-8 bg-gradient-to-b from-indigo-400 to-purple-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
-          <h2 className="text-2xl font-bold text-white">Gaming News</h2>
-          <div className="ml-auto px-3 py-1 rounded bg-indigo-400/10 text-indigo-400 text-sm font-mono border border-indigo-400/30">
-            Latest
-          </div>
-        </div>
+                      {/* News Section - PS5 Style */}
+                <Container className="p-8 bg-gradient-to-br from-black via-slate-900/90 to-black border border-white/20 backdrop-blur-sm shadow-[0_0_25px_rgba(255,255,255,0.1)]">
+        <SectionHeader 
+          title="Gaming News" 
+          badge="Latest" 
+          accentColor="indigo" 
+        />
         <div className="space-y-3">
           {(data.news || []).map((n, idx) => (
             <div key={idx} className="group p-4 rounded-xl bg-slate-800/40 border border-gray-700/50 hover:border-indigo-400/50 hover:bg-slate-800/60 transition-all duration-300">

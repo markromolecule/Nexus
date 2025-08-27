@@ -10,6 +10,9 @@ import lostLegacyImg from '../assets/img/games/lost.jpg'
 // Avatar
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import josephAvatar from '../assets/img/avatar/profile.JPG'
+import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
+import euriAvatar from '../assets/img/avatar/euri.jpg'
+import bjAvatar from '../assets/img/avatar/bj.jpg'
 
 export const jomData = {
   hero: {
@@ -84,9 +87,9 @@ export const jomData = {
 
   friends: [
     { id: 1, name: 'Joseph', status: 'Online', avatar: josephAvatar },
-    { id: 2, name: 'Kyros', status: 'In Match', avatar: '' },
-    { id: 3, name: 'Euri', status: 'Online', avatar: '' },
-    { id: 4, name: 'Bj', status: 'Away', avatar: '' },
+    { id: 2, name: 'Kyros', status: 'In Match', avatar: kyrosAvatar },
+    { id: 3, name: 'Euri', status: 'Online', avatar: euriAvatar },
+    { id: 4, name: 'Bj', status: 'Away', avatar: bjAvatar },
   ],
 
   games: [

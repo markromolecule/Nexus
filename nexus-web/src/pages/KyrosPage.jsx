@@ -1,19 +1,61 @@
 import { kyrosData as data } from "../common/kyrosData"
+import Container from "../shared/Container"
+import { useSound } from '../hooks/useSound'
 
 export default function KyrosPage() {
+  const { click, select } = useSound()
+  
   return (
-    <div className="relative z-10 min-h-screen bg-gradient-to-br from-black via-purple-900/30 to-black pt-24">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 pt-24 overflow-hidden">
       {/* Purple Neon Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-violet-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fuchsia-400/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
 
+      {/* Fighting Game Arena Grid Pattern */}
+      <div className="fixed inset-0 opacity-10 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(168,85,247,0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(168,85,247,0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      {/* Purple Edge Lighting Effects */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-transparent via-violet-400/30 to-transparent"></div>
+        <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-purple-400/30 to-transparent"></div>
+        <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-violet-400/20 to-transparent"></div>
+      </div>
+
+      {/* Additional Ambient Purple Lights */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-40 right-40 w-72 h-72 bg-purple-600/8 rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s', animationDuration: '7s'}}></div>
+        <div className="absolute bottom-40 left-40 w-64 h-64 bg-violet-600/6 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s', animationDuration: '8s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-fuchsia-500/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '5s', animationDuration: '6s'}}></div>
+      </div>
+
+      {/* Fighting Game Energy Particles */}
+      <div className="fixed inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 25%, rgba(168,85,247,0.2) 2px, transparent 2px),
+            radial-gradient(circle at 75% 75%, rgba(139,92,246,0.15) 1px, transparent 1px),
+            radial-gradient(circle at 50% 50%, rgba(236,72,153,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '120px 120px, 180px 180px, 240px 240px'
+        }}></div>
+      </div>
+
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         
         {/* Hero Profile Section */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-900/80 via-violet-800/80 to-purple-900/80 p-8 shadow-2xl border border-purple-500/30 backdrop-blur-sm">
+        <Container className="p-8 bg-gradient-to-r from-purple-900/80 via-violet-800/80 to-purple-900/80 border-purple-500/30" id="character">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
@@ -42,7 +84,7 @@ export default function KyrosPage() {
               <p className="text-purple-200 text-sm leading-relaxed max-w-2xl">{data.character.bio}</p>
             </div>
           </div>
-        </div>
+        </Container>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -1,6 +1,8 @@
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import josephAvatar from '../assets/img/avatar/profile.JPG'
 import bjAvatar from '../assets/img/avatar/bj.jpg'
+import euriAvatar from '../assets/img/avatar/euri.jpg'
+import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
 // PS Vita Games - Using actual game images
 import personaImg from '../assets/img/games/persona.jpg' // Persona 4 Golden
 import unchartedVita from '../assets/img/games/goldenabyss.png' // Uncharted Golden Abyss
@@ -46,8 +48,8 @@ export const bjData = {
   ],
 
   friends: [
-    { id: 1, name: 'Euri', status: 'Online', avatar: '' },
-    { id: 2, name: 'Kyros', status: 'In Match', avatar: '' },
+    { id: 1, name: 'Euri', status: 'Online', avatar: euriAvatar },
+    { id: 2, name: 'Kyros', status: 'In Match', avatar: kyrosAvatar },
     { id: 3, name: 'Jom', status: 'Online', avatar: jommAvatar },
     { id: 4, name: 'Joseph', status: 'Away', avatar: josephAvatar },
   ],

@@ -1,6 +1,8 @@
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import josephAvatar from '../assets/img/avatar/profile.JPG'
 import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
+import euriAvatar from '../assets/img/avatar/euri.jpg'
+import bjAvatar from '../assets/img/avatar/bj.jpg'
 // Fighting Games - Using actual game images
 import streetFighterImg from '../assets/img/games/streetfighet.jpg' // Street Fighter 6
 import tekkenImg from '../assets/img/games/tekken.jpg' // Tekken 8
@@ -48,8 +50,8 @@ export const kyrosData = {
   friends: [
     { id: 1, name: 'Jom', status: 'Online', avatar: jommAvatar },
     { id: 2, name: 'Joseph', status: 'In Match', avatar: josephAvatar },
-    { id: 3, name: 'Euri', status: 'Offline', avatar: '' },
-    { id: 4, name: 'BJ', status: 'Offline', avatar: '' },
+    { id: 3, name: 'Euri', status: 'Offline', avatar: euriAvatar },
+    { id: 4, name: 'BJ', status: 'Offline', avatar: bjAvatar },
   ],
   clips: [
     { id: 1, title: 'Insane clutch', duration: '0:17' },
