@@ -108,3 +108,25 @@ body.theme-alt .grid-overlay {
   0%, 100% { transform: translateX(-30%); }
   50% { transform: translateX(30%); }
 }
+
+/* Scanline HUD overlay */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    rgba(0, 0, 0, 0) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+  animation: scanFlicker 6s linear infinite;
+}
+
+@keyframes scanFlicker {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.18; }
+}

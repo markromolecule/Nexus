@@ -3,6 +3,9 @@ import jommAvatar from '../assets/img/avatar/jomm.jpg'
 import codImg from '../assets/img/games/cod.jpg'
 import gtaImg from '../assets/img/games/Grand_Theft_Auto_V.png'
 import warzoneImg from '../assets/img/games/Warzone.png'
+import unchartedImg from '../assets/img/games/uncharted.jpg'
+import watchDogsImg from '../assets/img/games/Watch_Dogs_2.jpg'
+import forzaImg from '../assets/img/games/forza.jpg'
 
 export const josephData = {
   hero: {
@@ -73,6 +76,9 @@ export const josephData = {
     { id: 1, title: 'Call of Duty: Warzone', genre: 'Battle Royale', top: true, image: warzoneImg },
     { id: 2, title: 'Call of Duty: Black Ops 3', genre: 'FPS Multiplayer', image: codImg },
     { id: 3, title: 'Grand Theft Auto V', genre: 'Open World Crime', image: gtaImg },
+    { id: 4, title: 'Uncharted 4', genre: 'Action Adventure', image: unchartedImg },
+    { id: 5, title: 'Watch Dogs 2', genre: 'Open World Hacker', image: watchDogsImg },
+    { id: 6, title: 'Forza Horizon 5', genre: 'Racing', image: forzaImg },
   ],
 }
 
