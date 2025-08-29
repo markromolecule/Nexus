@@ -1,5 +1,11 @@
+// Profile Pictures feat: Avatar
 import profileAvatar from '../assets/img/avatar/profile.JPG'
 import jommAvatar from '../assets/img/avatar/jomm.jpg'
+import euriAvatar from '../assets/img/avatar/euri.jpg'
+import kyrosAvatar from '../assets/img/avatar/kyros.jpg'
+import bjAvatar from '../assets/img/avatar/bj.jpg'
+
+// Gaming Image
 import codImg from '../assets/img/games/cod.jpg'
 import gtaImg from '../assets/img/games/Grand_Theft_Auto_V.png'
 import warzoneImg from '../assets/img/games/Warzone.png'
@@ -72,7 +78,7 @@ export const josephData = {
       id: 3,
       name: 'Kyros, the Innovator',
       role: 'Creative Director',
-      avatar: '',
+      avatar: kyrosAvatar,
       bio: 'Visionary designer pushing the boundaries of gaming aesthetics and user experience.',
       top: false,
       level: 82,
@@ -132,9 +138,9 @@ export const josephData = {
 
   friends: [
     { id: 1, name: 'Jom', status: 'Online', avatar: jommAvatar },
-    { id: 2, name: 'Kyros', status: 'Online', avatar: '' },
-    { id: 3, name: 'Euri', status: 'In Match', avatar: '' },
-    { id: 4, name: 'Bj', status: 'Away', avatar: '' },
+    { id: 2, name: 'Kyros', status: 'Online', avatar: kyrosAvatar },
+    { id: 3, name: 'Euri', status: 'In Match', avatar: euriAvatar },
+    { id: 4, name: 'Bj', status: 'Away', avatar: bjAvatar },
   ],
 
   games: [
