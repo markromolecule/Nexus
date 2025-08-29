@@ -17,6 +17,7 @@ export default function Header({ active, onSelect, scrolled = false, theme = 'da
               : 'appearance-none bg-[#0B1220]/80 border border-[#1F2937] text-[#E5E7EB] hover:border-[#2563EB]/60'
             } rounded-xl pl-4 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#22D3EE]/20 transition backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]`}
           >
+            {/* logic to filter developers ni otep */}
             {DEVELOPERS.map((key, idx) => (
               <option key={key} value={key}>
                 {key}

@@ -20,8 +20,8 @@ function App() {
           {active === 'Joseph' && <JosephPage />}
           {active === 'Jom' && <JomPage />}
           {active === 'Kyros' && <KyrosPage />}
-                  {active === 'Euri' && <EuriPage />}
-        {active === 'Bj' && <BjPage />}
+          {active === 'Euri' && <EuriPage />}
+          {active === 'Bj' && <BjPage />}
         </div>
         <Footer theme={active === 'Kyros' ? 'light' : 'dark'} />
       </div>

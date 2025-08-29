@@ -1,6 +1,11 @@
 import Card from '../common/Card'
 
-export default function FeaturedTournamentCard({ title, prizePool, startsAt }) {
+export default function FeaturedTournamentCard({ 
+  title, 
+  prizePool, 
+  startsAt }) 
+  {
+    
   return (
     <Card className="bg-gradient-to-r from-[#0D0D0D] via-[#2563EB]/10 to-[#06B6D4]/10 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-black/10 to-black/25" />

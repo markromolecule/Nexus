@@ -33,7 +33,7 @@ export default function JosephPage() {
         const py = (e.clientY - rect.top) / rect.height - 0.5;
         setParallax({ x: px, y: py });
       }}>
-        {/* Futuristic ambient layers */}
+        {/* ambient layers */}
         <div className="neon-orb" />
         <div className="grid-overlay" />
         <div className="glow-ring" />
@@ -141,6 +141,94 @@ export default function JosephPage() {
           </div>
         </Container>
       </div>
+
+      {/* Characters Section */}
+      <Container className="p-8">
+        <div className="mb-6 flex items-center gap-3">
+          <span className="inline-block h-6 w-2 rounded bg-gradient-to-b from-[#06B6D4] to-[#2563EB]" />
+          <h2 className="text-2xl font-bold text-white tracking-wide">Team Characters</h2>
+          <span className="ml-auto text-xs px-3 py-1 rounded-full border border-[#06B6D4]/30 text-[#06B6D4]">3 Members</span>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {(data.characters || []).map((character) => (
+            <div key={character.id} className="group">
+              <div className="relative p-6 rounded-2xl border border-[#1F2937] bg-[#0B1220]/50 hover:border-[#2563EB]/60 transition-all duration-300 hover:shadow-[0_0_50px_#06B6D4]/20 overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-[#0B1220]/20 to-[#0B1220]/40" />
+                <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity ring-1 ring-[#06B6D4]/25" />
+                
+                {/* Character Header */}
+                <div className="relative flex items-start gap-4 mb-4">
+                  <div className="relative">
+                    {character.avatar ? (
+                      <img 
+                        src={character.avatar} 
+                        alt={character.name} 
+                        className="h-20 w-20 rounded-xl ring-2 ring-[#2563EB]/50 object-cover object-center transform transition-transform duration-300 group-hover:scale-105" 
+                      />
+                    ) : (
+                      <div className="h-20 w-20 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-white font-bold text-2xl">
+                        {character.name.charAt(0)}
+                      </div>
+                    )}
+                    {character.top && (
+                      <span className="absolute -top-2 -right-2 text-[10px] px-2 py-1 rounded-full bg-[#06B6D4]/20 text-[#06B6D4] border border-[#06B6D4]/40 shadow-[0_0_20px_#06B6D4]/20">
+                        Top
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xl font-bold text-white group-hover:text-[#06B6D4] transition-colors">
+                      {character.name}
+                    </div>
+                    <div className="text-sm text-[#9CA3AF] mb-2">{character.role}</div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs px-2 py-1 rounded bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/40">
+                        Lv.{character.level}
+                      </span>
+                      <span className="text-xs px-2 py-1 rounded bg-[#06B6D4]/20 text-[#06B6D4] border border-[#06B6D4]/40">
+                        {character.rank}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bio */}
+                <p className="text-sm text-[#D1D5DB] mb-4 leading-relaxed">{character.bio}</p>
+
+                {/* Specialties */}
+                <div className="mb-4">
+                  <div className="text-xs uppercase tracking-wider text-[#9CA3AF] mb-2">Specialties</div>
+                  <div className="flex flex-wrap gap-2">
+                    {character.specialties.map((specialty, idx) => (
+                      <span key={idx} className="text-xs px-2 py-1 rounded-full bg-[#1F2937] text-[#E5E7EB] border border-[#374151]">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stats Bars */}
+                <div className="space-y-2">
+                  {Object.entries(character.stats).map(([stat, value]) => (
+                    <div key={stat} className="flex items-center justify-between text-xs">
+                      <span className="text-[#9CA3AF] capitalize">{stat}</span>
+                      <span className="text-white font-medium">{value}</span>
+                      <div className="flex-1 mx-3 h-1.5 rounded-full bg-[#1F2937] overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-[#2563EB] to-[#06B6D4] transition-all duration-500"
+                          style={{ width: `${value}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
 
       {/* Featured Tournament */}
       {data.tournament && (

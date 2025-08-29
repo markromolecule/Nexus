@@ -12,24 +12,90 @@ export const josephData = {
     title: 'Nexus Arena',
     subtitle: 'Next‑gen competitive hub',
     cta: 'Enter Lobby',
-    // Optional: provide a video or gif URL to showcase in the hero media panel
-    videoUrl: '/image/hero.gif', // e.g. '/image/hero.gif' or '/video/hero.mp4'
-    videoType: 'image/gif', // or 'video/mp4'
+    videoUrl: '/image/hero.gif',
+    videoType: 'image/gif',
   },
   
   character: {
     name: 'Joseph, the Creator',
     role: 'Lead Developer of Nexus',
     avatar: profileAvatar,
-    bio: 'I am the head/lead developer of Nexus Arena.',
+    bio: 'I am the head/lead developer of Nexus Arena. Passionate about creating immersive gaming experiences and building the next generation of competitive platforms.',
     top: true,
+    level: 99,
+    rank: 'Legendary',
+    specialties: ['Full-Stack Development', 'Game Design', 'UI/UX', 'System Architecture'],
+    stats: {
+      coding: 95,
+      gaming: 88,
+      leadership: 92,
+      creativity: 90
+    }
   },
+
+  characters: [
+    {
+      id: 1,
+      name: 'Joseph, the Creator',
+      role: 'Lead Developer',
+      avatar: profileAvatar,
+      bio: 'Head developer of Nexus Arena. Passionate about creating immersive gaming experiences.',
+      top: true,
+      level: 99,
+      rank: 'Legendary',
+      specialties: ['Full-Stack Development', 'Game Design', 'UI/UX', 'System Architecture'],
+      stats: {
+        coding: 95,
+        gaming: 88,
+        leadership: 92,
+        creativity: 90
+      }
+    },
+    {
+      id: 2,
+      name: 'Jom, the Strategist',
+      role: 'Game Strategist',
+      avatar: jommAvatar,
+      bio: 'Master tactician and competitive gaming expert. Specializes in meta analysis and team coordination.',
+      top: false,
+      level: 87,
+      rank: 'Elite',
+      specialties: ['Strategy', 'Team Coordination', 'Meta Analysis', 'Competitive Play'],
+      stats: {
+        strategy: 94,
+        teamwork: 89,
+        analysis: 91,
+        execution: 86
+      }
+    },
+    {
+      id: 3,
+      name: 'Kyros, the Innovator',
+      role: 'Creative Director',
+      avatar: '',
+      bio: 'Visionary designer pushing the boundaries of gaming aesthetics and user experience.',
+      top: false,
+      level: 82,
+      rank: 'Master',
+      specialties: ['Creative Design', 'User Experience', 'Visual Arts', 'Innovation'],
+      stats: {
+        creativity: 96,
+        design: 93,
+        innovation: 89,
+        aesthetics: 91
+      }
+    }
+  ],
 
   achievements: [
     'Sharpshooter',
     'Team Player',
     'Marathon Gamer',
     'Malupit',
+    'Kupal',
+    'Code Master',
+    'Design Guru',
+    'Team Leader'
   ],
 
   activity: [
@@ -55,7 +121,6 @@ export const josephData = {
     { label: 'Achievements', value: 47 },
   ],
 
-  // New detailed stats for richer UI
   statDetails: [
     { label: 'K/D Ratio', value: 2.1, max: 3.0 },
     { label: 'Win Rate', value: 68, max: 100, unit: '%' },
@@ -73,7 +138,7 @@ export const josephData = {
   ],
 
   games: [
-    { id: 1, title: 'Call of Duty: Warzone', genre: 'Battle Royale', top: true, image: warzoneImg },
+    { id: 1, title: 'Call of Duty: WARZONE', genre: 'Battle Royale', top: true, image: warzoneImg },
     { id: 2, title: 'Call of Duty: Black Ops 3', genre: 'FPS Multiplayer', image: codImg },
     { id: 3, title: 'Grand Theft Auto V', genre: 'Open World Crime', image: gtaImg },
     { id: 4, title: 'Uncharted 4', genre: 'Action Adventure', image: unchartedImg },
